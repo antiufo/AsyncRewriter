@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.PlatformAbstractions;
-using Microsoft.Framework.FileSystemGlobbing;
+using Microsoft.Extensions.FileSystemGlobbing;
 
 namespace AsyncRewriter.Commands
 {
