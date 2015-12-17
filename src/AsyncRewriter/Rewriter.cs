@@ -301,7 +301,7 @@ namespace AsyncRewriter
                     // Next attempt to find an async method with a matching parameter list with no cancellation token
                     if (asyncCandidates.Any(ms =>
                             ms.Parameters.Length == syncSymbol.Parameters.Length &&
-                            ms.Parameters.SequenceEqual(syncSymbol.Parameters)
+                            ms.Parameters.SequenceEqual(syncSymbol.Parameters, _paramComparer)
                     ))
                     {
                         cancellationTokenPos = -1;
@@ -383,7 +383,7 @@ namespace AsyncRewriter
 
             public int GetHashCode(IParameterSymbol p)
             {
-                return p.GetHashCode();
+                return p.Name.GetHashCode();
             }
         }
     }
