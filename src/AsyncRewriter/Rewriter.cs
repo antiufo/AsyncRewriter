@@ -61,7 +61,7 @@ namespace AsyncRewriter
                 _asyncHelpersSyntaxTree = SyntaxFactory.ParseSyntaxTree(reader.ReadToEnd());
             }
         }
-/*
+
         public string RewriteAndMerge(string[] paths, string[] additionalAssemblyNames=null, string[] excludedTypes = null)
         {
             if (paths.All(p => Path.GetFileName(p) != "AsyncRewriterHelpers.cs"))
@@ -81,7 +81,7 @@ namespace AsyncRewriter
 
             return RewriteAndMerge(syntaxTrees, compilation, excludedTypes).ToString();
         }
-*/
+
         public SyntaxTree RewriteAndMerge(SyntaxTree[] syntaxTrees, CSharpCompilation compilation, string[] excludedTypes = null)
         {
             var rewrittenTrees = Rewrite(syntaxTrees, compilation, excludedTypes).ToArray();
